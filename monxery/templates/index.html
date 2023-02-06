@@ -1,0 +1,297 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'index.css'%}">
+    <link rel="icon" type="image/x-icon" href="{% static 'logo.png' %}">
+    <!-- BOOTSTRAP4.6 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Monxery | Tcas สำหรับทุกคน</title>
+    <style>
+        @font-face {
+        font-family: iconic;
+        src: url('{% static 'FC Iconic Regular.ttf' %}');
+    }
+
+    @font-face {
+        font-family: iconic-b;
+        src: url('{% static 'FC Iconic Bold.ttf' %}');
+    }
+    body {
+      scroll-behavior: smooth;
+    }
+    </style>
+</head>
+
+<body>
+    {%block content%}
+    <nav style="background-color: #1b1b1b;" class="navbar navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#n8" aria-controls="n8" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse justify-content-md-center" id="n8">
+            <ul class="navbar-nav">
+                <li class="nav-item active rounded">
+                    <a class="nav-link" href="#">หน้าแรก<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item rounded">
+                    <a class="nav-link" href="#news">ข่าวสารต่างๆ</a>
+                </li>
+                <li class="nav-item rounded">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#modal2">คลังข้อสอบ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {%endblock content%}
+    <div class="container-fluid" style="background-color: #292929;">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img src="{% static 'banner.png' %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+        <div class="row mt-4">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <aside class="profile-card">
+
+                <header>
+              
+                  <!-- here’s the avatar -->
+                  <a href="#">
+                    <img style="width: 120px; height: 120px;" src="https://media.discordapp.net/attachments/846643554990555147/1020903112623521832/IMG_1581.jpg?width=875&height=656">
+                  </a>
+              
+                  <!-- the username -->
+                  <h1 style="font-family: iconic-b;">ข่าวอัพเดตล่าสุด</h1>
+              
+                  <!-- and role or location -->
+                  <h2 style="font-family: iconic-b;">ผู้ดูแล : ขุมกษาปณ์ ธนัญชัย</h2>
+              
+                </header>
+              
+                <!-- bit of a bio; who are you? -->
+                <div class="profile-bio">
+              
+                  <p><button onclick="window.location.href='#news';" class="btn btn-warning" style="font-family: iconic-b;">คลิ๊กเพื่ออ่านข่าว</button></p>
+              
+                </div>
+              
+                <!-- some social links to show off -->
+                <ul class="profile-social-links">
+              
+                  <!-- twitter - el clásico  -->
+                  <li>
+                    <a href="https://www.facebook.com/profile.php?id=100004006345481">
+                      <img src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg">
+                    </a>
+                  </li>
+              
+                  <!-- codepen - your codepen profile-->
+                  <li>
+                    <a href="#">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png">
+                    </a>
+                  </li>
+              
+                  <!-- envato – use this one to link to your marketplace profile -->
+                  <li>
+                    <a href="#">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/768px-LINE_logo.svg.png">
+                    </a>
+                  </li>
+                </ul>
+                
+              </aside>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <aside class="profile-card">
+
+                    <header>
+                  
+                      <!-- here’s the avatar -->
+                      <a href="#">
+                        <img style="height: 120px; width: 120px;" src="https://media.discordapp.net/attachments/846643554990555147/985969761471049728/9B667F5F-8EAE-42EA-9C5F-C78689576B86.jpg">
+                      </a>
+                  
+                      <!-- the username -->
+                      <h1 style="font-family: iconic-b;">แนวข้อสอบตึงๆ</h1>
+                  
+                      <!-- and role or location -->
+                      <h2 style="font-family: iconic-b;">ผู้ดูแล : นายเสฏฐนันท์ อุดมมั่นถาวร</h2>
+                  
+                    </header>
+                  
+                    <!-- bit of a bio; who are you? -->
+                    <div class="profile-bio">
+                  
+                      <p><button class="btn btn-warning" style="font-family: iconic-b;" data-toggle="modal" data-target="#modal2">คลิ๊กเพื่อทำข้อสอบ</button></p>
+                  
+                    </div>
+                    
+                  
+                    <!-- some social links to show off -->
+                    <ul class="profile-social-links">
+                  
+                      <!-- hwacebrook - el clásico  -->
+                      <li>
+                        <a href="#">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg">
+                        </a>
+                      </li>
+                  
+                      <!-- codepen - your codepen profile-->
+                      <li>
+                        <a href="#">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png">
+                        </a>
+                      </li>
+                  
+                      <!-- envato – use this one to link to your marketplace profile -->
+                      <li>
+                        <a href="#">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/768px-LINE_logo.svg.png">
+                        </a>
+                      </li>
+                    </ul>
+                    
+                  </aside>
+            </div>
+        </div>
+        <div class="row " style="margin-top: 150px;">
+          <div class="col-sm-12 col-lg-12 col-md-12">
+            <h1 id="news" class="text-center text-white" style="font-family: iconic-b; font-size: 60px">ข่าวสาร</h1>
+            <div class="overflow-auto news" style="max-width: 100%; max-height: 300px;">
+              {% for n in news %}
+              <div style="border-width: 10px; border-style: rounded;" class="border border-warning rounded m-2">
+                <h3 style="color: white; font-family: iconic-b;" class="text-center">{{ n.title }}</h3>
+                <h5 style="color: white; font-family: iconic;" class="text-center">{{ n.data }}</h5>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content" style="background-color: #292929;">
+          <div class="modal-header">
+            <h5 class="modal-title text-white" id="exampleModalLabel" style="font-family: iconic-b;">กรุณาเลือกข้อสอบ</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <a href="https://forms.gle/YUPm78chWdQ4DJRR6">
+                <button style="font-family: iconic; background-color: #F28705;" class="btn btn-primary btn-block m-1 mx-auto border-0">GAT1</button>
+              </a>
+            </div>
+            <div>
+              <a href="https://quilgo.com/t/sDZ9vu5dJqkqMnj6">
+                <button style="font-family: iconic" class="btn btn-primary btn-block m-1 mx-auto border-0">GAT1 timer</button>
+              </a>
+            </div>
+            <div>
+              <a href="https://forms.gle/jTnfzEF5ELeNfAWAA">
+                <button style="font-family: iconic; background-color: #F28705;" class="btn btn-primary btn-block m-1 mx-auto border-0">GAT2</button>
+              </a>
+            </div>
+            <div>
+              <a href="https://quilgo.com/t/W9Q8C1DSgC58Z5lj">
+                <button style="font-family: iconic" class="btn btn-primary btn-block m-1 mx-auto border-0">GAT2 timer</button>
+              </a>
+            </div>
+            <div>
+              <a href="https://forms.gle/m8xD6o24HZiizZWs7">
+                <button style="font-family: iconic; background-color: #F28705;" class="btn btn-primary btn-block m-1 mx-auto border-0">GAT3</button>
+              </a>
+            </div>
+            <div>
+              <a href="https://quilgo.com/t/4zfE3TyE7U1HirfD">
+                <button style="font-family: iconic" class="btn btn-primary btn-block m-1 mx-auto border-0">GAT3 timer</button>
+              </a>
+            </div>
+            <div>
+              <a href="https://forms.gle/pV6r6cARWLdfgbv69">
+                <button style="font-family: iconic; background-color: #F28705;" class="btn btn-primary btn-block m-1 mx-auto border-0">TPAT1</button>
+              </a>
+            </div>
+            <div>
+              <a href="https://quilgo.com/t/kvgD2iXh8PdMQfmS">
+                <button style="font-family: iconic" class="btn btn-primary btn-block m-1 mx-auto border-0">TPAT1 timer</button>
+              </a>
+            </div>
+            <div>
+              <a href="https://forms.gle/9JhT6GazfEwjWAd39">
+                <button style="font-family: iconic; background-color: #F28705;" class="btn btn-primary btn-block m-1 mx-auto border-0">TPAT2</button>
+              </a>
+            </div>
+            <div>
+              <a href="https://quilgo.com/t/qNLn7Qh4ddBKEzQJ">
+                <button style="font-family: iconic" class="btn btn-primary btn-block m-1 mx-auto border-0">TPAT2 timer</button>
+              </a>
+            </div>
+            <div>
+              <a href="https://forms.gle/aziAh2zGwzmneTcu8">
+                <button style="font-family: iconic; background-color: #F28705" class="btn btn-primary btn-block m-1 mx-auto border-0">TPAT3 </button>
+              </a>
+            </div>
+            <div>
+              <a href="https://quilgo.com/t/B5NWvzIAI8AQR3e5">
+                <button style="font-family: iconic" class="btn btn-primary btn-block m-1 mx-auto border-0">TPAT3 timer</button>
+            </div>
+            <div>
+              <a href="https://forms.gle/GFM6kKnfw6yXdZ6P8">
+                <button style="font-family: iconic; background-color: #F28705" class="btn btn-primary btn-block m-1 mx-auto border-0">TPAT4</button>
+            </div>
+            <div>
+              <a href="https://quilgo.com/t/qeMdGu0svveovDfW">
+                <button style="font-family: iconic" class="btn btn-primary btn-block m-1 mx-auto border-0">TPAT4 timer</button>
+            </div>
+            <div>
+              <a href="https://forms.gle/z7Pony9x5eJetFx99">
+                <button style="font-family: iconic; background-color: #F28705" class="btn btn-primary btn-block m-1 mx-auto border-0">TPAT5</button>
+            </div>
+            <div>
+              <a href="https://quilgo.com/t/m0xBL51GVxbueAGx">
+                <button style="font-family: iconic;" class="btn btn-primary btn-block m-1 mx-auto border-0">TPAT5 timer</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" style="font-family: iconic-b;">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="text-center" style="font-family: iconic; font-size: 25px; background-color: #F28705; text-decoration: none; color: #1b1b1b;">
+      ©2023 <a style="font-family: iconic; font-size: 25px; background-color: #F28705; text-decoration: none; color: #1b1b1b;" href="">Monxery</a></p>
+    </footer>
+    <script src="{%static 'index.js'%}"></script>
+    <!-- BOOTSTRAP4.6 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
